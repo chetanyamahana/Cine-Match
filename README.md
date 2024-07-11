@@ -43,9 +43,9 @@ To use CineMatch, follow these steps:
       .\env\Scripts\activate.ps1  
    ```
 3. **Install the required packages:**
-```sh
-   pip install -r requirements.txt
-```
+    ```sh
+        pip install -r requirements.txt
+    ```
 
 4. **Running the Application:**
 - Run the Flask application:
