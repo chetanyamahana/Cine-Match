@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch - Your Movie Guru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0d0d2c, #1a1a4f);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: hue-rotate 6s infinite linear;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .text-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .movie-collage {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        form {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: #fff;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes hue-rotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CineMatch</h1>
+            <p class="tagline">Discover your next favorite movie with AI-powered recommendations!</p>
+        </header>
+        <div class="content">
+            <div class="text-content">
+                <h2>How It Works</h2>
+                <p>CineMatch uses advanced machine learning algorithms to analyze your movie preferences and suggest films you're likely to love. Simply enter a movie you enjoy, and let our AI do the rest!</p>
+                <h2>Why CineMatch?</h2>
+                <ul>
+                    <li>Personalized recommendations based on your taste</li>
+                    <li>Discover hidden gems you might have missed</li>
+                    <li>Explore new genres and expand your cinematic horizons</li>
+                    <li>Save time searching and spend more time watching</li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="{{ url_for('static', filename='images/poster.jpeg') }}" alt="Movie Collage" class="movie-collage">
+            </div>
+        </div>
+        <form action="/recommend" method="post">
+            <input type="text" name="movie" placeholder="Enter a movie you love" required>
+            <button type="submit">Discover Movies</button>
+        </form>
+    </div>
+</body>
+</html>
