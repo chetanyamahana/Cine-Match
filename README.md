@@ -32,15 +32,27 @@ CineMatch uses advanced algorithms to analyze your movie preferences and viewing
 
 To use CineMatch, follow these steps:
 
-1. Clone the repository
-```bash
-git clone https://github.com/chetanyamahana/Cine-Match.git
-cd cine-match```
-2. Create and activate a virtual environment:
-```virtualenv env
-.\env\Scripts\activate.ps1```
-3. Install required dependencies
-```pip install -r requirements.txt```
-4. Run the application
-```python app.py```
+1. **Clone the repository:**
+   ```sh
+      git clone https://github.com/chetanyamahana/Cine-Match.git
+      cd cine-match
+   ```
+2. **Create and activate a virtual environment:**
+   ```sh
+      virtualenv env
+      .\env\Scripts\activate.ps1  
+   ```
+3. **Install the required packages:**
+```sh
+   pip install -r requirements.txt
+```
+
+4. **Running the Application:**
+- Run the Flask application:
+  ```sh
+     python app.py
+  ```
+   
+
+
 
