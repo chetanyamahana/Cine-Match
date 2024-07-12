@@ -21,7 +21,7 @@ CineMatch is a movie recommendation system that suggests what films you should w
 
 - Personalized movie recommendations
 - User-friendly interface
-- Extensive movie database
+- Extensive Movie database
 - Customizable recommendation filters
 
 ## How It Works
